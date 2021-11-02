@@ -1,0 +1,15 @@
+.about-container h1{
+    color: mediumblue;
+}
+.about-container h2{
+    font-family: cursive;
+}
+.about-container p{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.about-container{
+    background-color: paleturquoise;
+    line-height: 34px;
+    padding: 10px;
+}
