@@ -1,0 +1,18 @@
+.btn-bg{
+    background: #428821;
+    transition: 0.3s;
+    color: white;
+}
+.btn-bg:hover{
+    background: #317de0;
+    transform: scale(1.1);
+}
+
+  .cardText{
+      color: black;
+      text-align: center;
+  }
+  .image{
+    height: 200px;
+    width: 300px;
+  }

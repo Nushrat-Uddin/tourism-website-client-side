@@ -1,12 +1,10 @@
-.add form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+.add-place form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.add form input{
-    width: 40%;
-    margin-bottom: 10px;
-    border: 2px solid gray;
-    line-height: 40px;
+
+.backgrnd-img{
+    background-color: lightsteelblue;
 }

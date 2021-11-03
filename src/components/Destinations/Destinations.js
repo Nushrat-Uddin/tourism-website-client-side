@@ -1,26 +1,41 @@
+import React from 'react';
+import { Row, Spinner } from 'react-bootstrap';
+import useDestinations from '../../hooks/useDestinations';
+import SingleDestination from '../SingleDestination/SingleDestination';
 
-import React, { useEffect, useState } from 'react';
-import Country from '../Country/Country';
-import './Destinations.css';
+
 
 const Destinations = () => {
-    const[destinations,setDestinations]=useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/destinations')
-        .then(res=>res.json())
-        .then(data=>setDestinations(data))
-    },[])
+    const [destinations] = useDestinations();
     return (
-        <div>
-           <h2>Our Services</h2> 
-           <div className='container'>
-               {
-                   destinations.map(country=> <Country key={country._id}
-                            country={country}
-                   ></Country>)
-               }
-           </div>
-        </div>
+        <>
+            <div className="backgrnd-img">
+                <div className="text-enter pt-5">
+                    <h1 style={{ color: 'navy' }} className="fs-1">Explore Destinations</h1>
+                    <h3 style={{ color: '#2C77B1' }} className=" fs-3">Book a package</h3>
+                </div>
+                <div className="backgrnd-img container-fluid px-4 p-md-5">
+                    {
+                        destinations.length === 0 ?
+                        <div>
+                        <Spinner animation="border" variant="danger" />
+                        <Spinner animation="border" variant="warning" />
+                        <Spinner animation="border" variant="info" />
+                        <Spinner animation="border" variant="dark" />
+                        </div>
+                        :
+                    <Row xs={1} md={3} lg={3} xl={4} className="g-4">
+                        {
+                            destinations.map(destination => <SingleDestination
+                                key={destination._id}
+                                destination={destination}
+                            ></SingleDestination>)
+                        }
+                    </Row>
+                    }
+                </div>
+            </div>
+        </>
     );
 };
 
