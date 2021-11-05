@@ -5,7 +5,7 @@ const UpdateOrder = () => {
     const [order, setOrder] = useState({});
     const { id } = useParams();
     useEffect(() => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://calm-mountain-04463.herokuapp.com/users/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))
@@ -18,7 +18,7 @@ const UpdateOrder = () => {
     };
 
     const handleUpdateOrder = e => {
-        const url = `http://localhost:5000/users/${id}`;
+        const url = `https://calm-mountain-04463.herokuapp.com/users/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

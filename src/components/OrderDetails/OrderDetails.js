@@ -14,7 +14,7 @@ const OrderDetails = () => {
 
     const onSubmit = data => {
         data.booking_id = destinationId;
-        axios.post('http://localhost:5000/users', data)
+        axios.post('https://calm-mountain-04463.herokuapp.com/users', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully')
@@ -26,7 +26,7 @@ const OrderDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/destinations/${destinationId}`)
+        fetch(`https://calm-mountain-04463.herokuapp.com/destinations/${destinationId}`)
             .then(res => res.json())
             .then(data => setDestination(data))
     },[])

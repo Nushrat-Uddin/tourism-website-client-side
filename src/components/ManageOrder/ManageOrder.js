@@ -7,14 +7,14 @@ const ManageOrder = () => {
     const [countDelete, setCountDelete] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://calm-mountain-04463.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [countDelete])
 
     const handleUpdate = id => {
         const status = ['Approved'];
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://calm-mountain-04463.herokuapp.com/users/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -29,7 +29,7 @@ const ManageOrder = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you Sure to Delete?');
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://calm-mountain-04463.herokuapp.com/users/${id}`;
             setCountDelete(countDelete+1);
 
             fetch(url, {
